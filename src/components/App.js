@@ -5,7 +5,11 @@ import SearchBar from "./SearchBar";
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
 
-@Injectable({ inject: [SearchBar, VideoDetail, VideoList] })
+@Injectable({
+  inject: { SearchBar, VideoDetail, VideoList },
+  //this provider gets replaced in the ContainerConfig.js file.
+  provider: proxy => proxy
+})
 class App extends React.Component {
   componentDidMount() {
     this.onTermSubmit("");

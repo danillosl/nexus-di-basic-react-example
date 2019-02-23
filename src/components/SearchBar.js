@@ -1,7 +1,7 @@
 import React from "react";
 import { Injectable } from "nexus-di";
 
-@Injectable()
+@Injectable({ provider: proxy => proxy })
 class SearchBar extends React.Component {
   state = { term: "" };
 

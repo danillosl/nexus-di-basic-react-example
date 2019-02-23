@@ -17,11 +17,7 @@ container
       { fetchVideos, selectVideo }
     )(proxy);
   })
-  .register(VideoDetail, (clazz, container) => {
-    return clazz;
-  })
-  .register(VideoList, (clazz, container) => {
-    return clazz;
-  });
+  .registerObject({ key: VideoDetail, provider: container => VideoDetail })
+  .registerObject({ key: VideoList, provider: container => VideoList });
 
 export default container;
